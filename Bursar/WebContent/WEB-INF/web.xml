@@ -2,15 +2,43 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>Bursar</display-name>
 
+<!-- Database Logging -->
+ <context-param>
+    <param-name>driver</param-name>
+    <param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>URL</param-name>
+    <param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  <context-param>
+    <param-name>username</param-name>
+    <param-value>Bank</param-value>
+  </context-param>
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>Deanna</param-value>
+  </context-param>
+
+
 <!-- Servlet Naming  -->  
   <servlet>
     <servlet-name>loginServ</servlet-name>
     <servlet-class>Servlets.LoginServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>ReimbServ</servlet-name>
+    <servlet-class>Servlets.ReimbServlet</servlet-class>
+  </servlet>
 
-  <!-- Servlet Mapping  -->
+<!-- Servlet Mapping  -->
   <servlet-mapping>
     <servlet-name>loginServ</servlet-name>
     <url-pattern>/loginSubmit</url-pattern>
   </servlet-mapping>
+ <servlet-mapping>
+    <servlet-name>ReimbServ</servlet-name>
+    <url-pattern>/ReimbSubmit</url-pattern>
+  </servlet-mapping>
+
 </web-app>

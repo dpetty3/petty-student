@@ -5,12 +5,28 @@
 <title>Bursar Login</title>
 </head>
 <body >
+
+<!--  Alert for non-inputs -->
+<script>
+function validatelogin(){
+	
+	var x = document.forms["loginSubmit"]["user"].value;
+	var y = document.forms["loginSubmit"]["pwd"].value;
+	if((x||y) == "")
+		{
+			alert("You did not enter a username or password. ");
+			return false;
+		}
+	
+}</script>
+
+
 <div align = "center">
 <form action="loginSubmit" method="post">
 <table border = '2'>
 	
-	<tr><td >Username:</td><td><input type ="text" name="user"/></td></tr>
-	<tr><td>Password:</td><td><input type ="Password" name="pass"/></td></tr>
+	<tr><td> User Name:</td><td><input type ="text" name="user"/></td></tr>
+	<tr><td>Password:</td><td><input type ="Password" name="pwd"/></td></tr>
 	<tr><td colspan= "2" align = "center"><input type = "submit" value = "Login"/>
 	
 </table>

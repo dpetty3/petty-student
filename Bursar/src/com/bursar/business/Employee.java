@@ -2,21 +2,25 @@ package com.bursar.business;
 
 public class Employee {
 
-	
-	public Employee(long eid, String fname, String lname, String uname, String pwd) {
-		super();
-		this.eid = eid;
-		this.fname = fname;
-		this.lname = lname;
-		this.uname = uname;
-		this.pwd = pwd;
+	public Employee()
+	{
+		
 	}
 
 	private long eid;
+	private String stat;
 	private String fname;
 	private String lname;
 	private String uname;
-	private String pwd;
+	
+	public Employee(long eid, String stat, String fname, String lname, String uname, String pwd) {
+		super();
+		this.eid = eid;
+		this.stat = stat;
+		this.fname = fname;
+		this.lname = lname;
+		this.uname = uname;
+	}
 	
 	public long getEid() {
 		return eid;
@@ -42,20 +46,17 @@ public class Employee {
 	public void setUname(String uname) {
 		this.uname = uname;
 	}
-	public String getPwd() {
-		return pwd;
+	public String getStat() {
+		return stat;
 	}
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setStat(String stat) {
+		this.stat = stat;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Employee [eid=" + eid + ", fname=" + fname + ", lname=" + lname + ", uname=" + uname + ", pwd=" + pwd
+		return "Employee [eid=" + eid + ", stat=" + stat + ", fname=" + fname + ", lname=" + lname + ", uname=" + uname
 				+ "]";
 	}
-	
-	
-	
 	
 }
