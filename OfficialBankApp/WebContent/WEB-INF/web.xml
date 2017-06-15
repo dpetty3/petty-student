@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>OfficialBankApp</display-name>
+
+<welcome-file-list>
+    <welcome-file>login.html</welcome-file>
+  </welcome-file-list>
+  <context-param>
+    <param-name>Driver</param-name>
+    <param-value>oracle.jdbc.driver.OracleDriver</param-value>
+  </context-param>
+  <context-param>
+    <param-name>URL</param-name>
+    <param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
+  <context-param>
+    <param-name>username</param-name>
+    <param-value>Bank</param-value>
+  </context-param>
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>Deanna</param-value>
+  </context-param>
+ 
+  <!-- Servlet Naming  -->  
+  <servlet>
+    <servlet-name>loginServ</servlet-name>
+    <servlet-class>Servlets.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegisterServ</servlet-name>
+    <servlet-class>Servlets.regServlet</servlet-class>
+  </servlet>  
+  <servlet>
+    <servlet-name>TransactionServ</servlet-name>
+    <servlet-class>Servlets.transServlet</servlet-class>
+  </servlet>  
+  <servlet>
+    <servlet-name>DepoWithServ</servlet-name>
+    <servlet-class>Servlets.submitServlet</servlet-class>
+  </servlet>  
+  <!-- Servlet Mapping  -->
+  <servlet-mapping>
+    <servlet-name>loginServ</servlet-name>
+    <url-pattern>/loginSubmit</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterServ</servlet-name>
+    <url-pattern>/register</url-pattern>
+  </servlet-mapping>
+ <servlet-mapping>
+    <servlet-name>TransactionServ</servlet-name>
+    <url-pattern>/transSubmit</url-pattern>
+  </servlet-mapping>
+ <servlet-mapping>
+    <servlet-name>DepoWithServ</servlet-name>
+    <url-pattern>/depoAmt</url-pattern>
+  </servlet-mapping>  
+</web-app>
